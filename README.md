@@ -1,47 +1,54 @@
-# AI-Powered Adaptive Educational Gaming Platform
+# PlayNLearn - Educational Gaming Platform
 
-An innovative educational gaming platform that uses AI to generate adaptive learning experiences for students from grade 1 to undergraduate level.
+A modern educational gaming platform built with Next.js 14 and Laravel 11, featuring interactive games, achievements, and analytics.
 
-## Tech Stack
+## 🚀 Tech Stack
 
 ### Frontend
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- ShadCN UI
-- Zustand (State Management)
-- Three.js (3D Game Rendering)
-- Chart.js (Analytics)
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + ShadCN UI
+- **State Management:** Zustand
+- **Data Visualization:** Chart.js
+- **3D Graphics:** Three.js
 
 ### Backend
-- Laravel 11 (API-only)
-- Laravel Sanctum (JWT Authentication)
-- MySQL (via XAMPP)
+- **Framework:** Laravel 11 (API-only)
+- **Authentication:** Laravel Sanctum (JWT)
+- **Database:** MySQL (XAMPP)
 
 ### AI Service (Future)
-- Python Flask
-- OpenAI Integration
+- **Framework:** Python Flask
+- **Purpose:** AI-powered game mechanics and analytics
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 /
-├── frontend/           # Next.js 14 application
-│   ├── app/           # App router pages
-│   ├── components/    # React components
-│   ├── lib/          # Utilities and configurations
-│   ├── store/        # Zustand stores
-│   └── public/       # Static assets
+├── frontend/                 # Next.js 14 frontend
+│   ├── src/
+│   │   ├── app/             # App Router pages
+│   │   ├── components/      # React components
+│   │   ├── lib/            # Utilities and API clients
+│   │   └── store/          # Zustand stores
+│   └── public/             # Static assets
 │
-├── backend/           # Laravel 11 API
-│   ├── app/          # Application code
-│   ├── routes/       # API routes
-│   └── database/     # Migrations and seeds
+├── backend/                 # Laravel 11 API
+│   ├── app/
+│   │   ├── Http/
+│   │   │   ├── Controllers/
+│   │   │   └── Middleware/
+│   │   └── Models/
+│   ├── database/
+│   │   ├── migrations/
+│   │   └── seeders/
+│   └── routes/
+│       └── api.php
 │
-└── ai-service/        # Future Python Flask service
+└── ai-service/             # Future Python Flask service
 ```
 
-## Setup Instructions
+## 🛠️ Setup Instructions
 
 ### Prerequisites
 - Node.js 18+
@@ -64,30 +71,60 @@ composer install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+php artisan db:seed
 php artisan serve
 ```
 
 ### Database Setup
-1. Start XAMPP and ensure MySQL is running
+1. Start XAMPP (Apache + MySQL)
 2. Create database: `playnlearn_db`
 3. Create user: `playnlearn_user` with password: `secure_password`
-4. Import database schema (will be provided in migrations)
+4. Import migrations and seeders
 
-## Development Workflow
+## 🌟 Features
 
-1. Clone the repository
-2. Create a new branch for your feature
-3. Make changes and commit
-4. Push to remote
-5. Create pull request
+- **Authentication System**
+  - JWT-based auth with Sanctum
+  - Protected routes
+  - User roles (Admin/User)
 
-## Available Branches
-- `main` - Production-ready code
-- `auth-system` - Authentication implementation
-- `ai-engine` - AI service integration
-- `game-modules` - Game templates and mechanics
-- `rewards-system` - Points and rewards system
-- `analytics-dashboard` - Analytics and reporting
+- **Game Modules**
+  - Kingdom Expansion (Educational Game)
+  - Interactive questions
+  - Real-time feedback
 
-## License
-Proprietary - All rights reserved 
+- **Rewards System**
+  - Achievements
+  - Leaderboards
+  - Progress tracking
+
+- **Analytics Dashboard**
+  - User performance metrics
+  - Game statistics
+  - Learning progress
+
+## 🔄 Development Workflow
+
+1. **Branch Strategy**
+   - `auth-system`: Authentication features
+   - `ai-engine`: AI integration
+   - `game-modules`: Game development
+   - `rewards-system`: Achievements and rewards
+   - `analytics-dashboard`: Analytics features
+
+2. **Commit Guidelines**
+   - Use conventional commits
+   - Reference issue numbers
+   - Write clear commit messages
+
+## 📝 License
+
+MIT License - See LICENSE file for details
+
+## 👥 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request 
